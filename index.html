@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة الحصاد للتقاوي والتنمية الزراعية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#123f1e;
+  --green-700:#1f6a33;
+  --green-500:#2f8f4e;
+  --gold:#c9a227;
+  --gold-soft:#e8cf7a;
+  --sand:#f7f4ec;
+  --ink:#22271f;
+  --muted:#5d665b;
+  --white:#ffffff;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;color:var(--ink);background:var(--sand);line-height:1.8}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:92%;max-width:1100px;margin:0 auto}
+section{padding:64px 0}
+.section-title{text-align:center;margin-bottom:8px;font-size:1.7rem;font-weight:800;color:var(--green-900)}
+.section-sub{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 40px}
+.section-title::after{content:"";display:block;width:64px;height:4px;background:var(--gold);margin:10px auto 0;border-radius:4px}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:50;background:var(--green-900);color:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem}
+.logo .mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--green-500),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.nav-links{display:flex;gap:22px;list-style:none;font-weight:600;font-size:.95rem}
+.nav-links a{opacity:.9;transition:.2s}
+.nav-links a:hover{opacity:1;color:var(--gold-soft)}
+.burger{display:none;background:none;border:0;color:var(--white);font-size:1.5rem;cursor:pointer}
+@media(max-width:760px){
+  .burger{display:block}
+  .nav-links{position:absolute;top:64px;right:0;left:0;background:var(--green-900);flex-direction:column;gap:0;padding:0 5%;max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .nav-links.open{max-height:400px;padding:10px 5%}
+  .nav-links li{border-top:1px solid rgba(255,255,255,.08);padding:12px 0}
+}
+
+/* ===== Hero ===== */
+.hero{position:relative;color:var(--white);padding:96px 0 88px;background:
+  linear-gradient(rgba(18,63,30,.88),rgba(18,63,30,.82)),
+  repeating-linear-gradient(45deg,#1f6a33 0 12px,#1b5c2c 12px 24px);
+  text-align:center}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;margin-bottom:14px}
+.hero p{max-width:640px;margin:0 auto 30px;font-size:1.1rem;opacity:.95}
+.hero .badge{display:inline-block;background:rgba(201,162,39,.18);border:1px solid var(--gold);color:var(--gold-soft);padding:4px 16px;border-radius:30px;font-size:.85rem;font-weight:700;margin-bottom:18px}
+.btn{display:inline-block;padding:13px 34px;border-radius:30px;font-weight:700;font-size:1rem;transition:.2s;cursor:pointer;border:0}
+.btn-gold{background:var(--gold);color:var(--green-900)}
+.btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.55);margin-inline-start:12px}
+.btn-ghost:hover{border-color:var(--white)}
+.hero-btns{margin-top:6px}
+
+/* ===== Stats ===== */
+.stats{background:var(--white);padding:36px 0;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;text-align:center}
+.stat .num{font-size:2rem;font-weight:800;color:var(--green-700)}
+.stat .lbl{color:var(--muted);font-weight:600;font-size:.95rem}
+
+/* ===== About ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+.about-visual{border-radius:var(--radius);min-height:300px;background:linear-gradient(135deg,var(--green-700),var(--green-500));display:flex;align-items:center;justify-content:center;font-size:5rem;box-shadow:0 14px 30px rgba(18,63,30,.18)}
+.about-text h2{font-size:1.6rem;font-weight:800;color:var(--green-900);margin-bottom:14px}
+.about-text p{color:var(--muted);margin-bottom:18px}
+.about-points{list-style:none}
+.about-points li{display:flex;gap:10px;margin-bottom:10px;font-weight:600}
+.about-points li::before{content:"✔";color:var(--gold);font-weight:800}
+
+/* ===== Products ===== */
+.products{background:var(--white)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.card{background:var(--sand);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.07);transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.12)}
+.card .thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:3.6rem;color:var(--white)}
+.thumb.t1{background:linear-gradient(135deg,#c9a227,#a8841c)}
+.thumb.t2{background:linear-gradient(135deg,#2f8f4e,#1f6a33)}
+.thumb.t3{background:linear-gradient(135deg,#7a9e3f,#5a7a2a)}
+.card .body{padding:20px}
+.card h3{font-size:1.15rem;font-weight:800;color:var(--green-900);margin-bottom:6px}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.card .more{color:var(--green-700);font-weight:700;font-size:.9rem}
+
+/* ===== Why us ===== */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.feature{background:var(--white);border-radius:var(--radius);padding:26px 22px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.feature .ico{font-size:2.2rem;margin-bottom:10px}
+.feature h3{font-size:1.05rem;font-weight:800;color:var(--green-900);margin-bottom:6px}
+.feature p{color:var(--muted);font-size:.92rem}
+
+/* ===== CEO ===== */
+.ceo{background:linear-gradient(rgba(18,63,30,.92),rgba(18,63,30,.92)),repeating-linear-gradient(-45deg,#1f6a33 0 10px,#1b5c2c 10px 20px);color:var(--white);text-align:center}
+.ceo blockquote{max-width:720px;margin:0 auto;font-size:1.25rem;font-weight:600;line-height:2}
+.ceo .who{margin-top:20px;font-weight:800;color:var(--gold-soft)}
+.ceo .role{opacity:.85;font-size:.9rem}
+
+/* ===== Contact ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.contact-info .row{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+.contact-info .ico{width:44px;height:44px;flex:none;border-radius:12px;background:var(--green-700);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.contact-info h4{font-weight:800;color:var(--green-900)}
+.contact-info p{color:var(--muted);font-size:.95rem}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:12px 26px;border-radius:30px;font-weight:700;margin-top:6px}
+form{background:var(--white);padding:26px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+form label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px;color:var(--green-900)}
+form input,form textarea{width:100%;padding:12px 14px;border:1.5px solid #d8dcd2;border-radius:10px;font-family:inherit;font-size:.95rem;margin-bottom:16px;background:var(--sand)}
+form input:focus,form textarea:focus{outline:none;border-color:var(--green-500)}
+form textarea{resize:vertical;min-height:110px}
+.form-note{font-size:.8rem;color:var(--muted);margin-top:10px}
+
+/* ===== Footer ===== */
+footer{background:#0d2c15;color:#cfd8cc;padding:52px 0 0;font-size:.92rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1.4fr 1.4fr;gap:32px;padding-bottom:36px}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr}}
+footer h4{color:var(--gold-soft);font-size:1.02rem;font-weight:800;margin-bottom:14px}
+.footer-brand p{opacity:.85;max-width:320px}
+.footer-links{list-style:none;columns:2}
+.footer-links li{margin-bottom:9px}
+.footer-links a{opacity:.85;transition:.2s}
+.footer-links a:hover{opacity:1;color:var(--gold-soft)}
+.footer-contact p{margin-bottom:9px;opacity:.85}
+.socials{display:flex;gap:10px;margin-top:12px}
+.socials a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.05rem;transition:.2s}
+.socials a:hover{background:var(--gold);color:var(--green-900)}
+.copy{border-top:1px solid rgba(255,255,255,.1);text-align:center;padding:16px 0;font-size:.85rem;opacity:.7}
+
+/* floating whatsapp */
+.float-wa{position:fixed;bottom:18px;left:18px;width:54px;height:54px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 6px 16px rgba(0,0,0,.25);z-index:60}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo"><span class="mark">🌾</span> الحصاد للتقاوي</a>
+    <button class="burger" id="burger" aria-label="القائمة">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">الرئيسية</a></li>
+      <li><a href="#about">عن الشركة</a></li>
+      <li><a href="#products">منتجاتنا</a></li>
+      <li><a href="#why">لماذا نحن</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <span class="badge">منذ أكثر من 25 عامًا في خدمة الزراعة المصرية</span>
+    <h1>تقاوي عالية الجودة لمحصول يستحق التعب</h1>
+    <p>نوفّر تقاوي معتمدة ومحاصيل محسّنة تساعد المزارع على إنتاجية أعلى وجودة أفضل، من الزراعة حتى الحصاد.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-gold">تواصل معنا</a>
+      <a href="#products" class="btn btn-ghost">تصفح المنتجات</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="num">+25</div><div class="lbl">سنة خبرة</div></div>
+    <div class="stat"><div class="num">+40</div><div class="lbl">صنف تقاوي</div></div>
+    <div class="stat"><div class="num">+3000</div><div class="lbl">مزارع يثق بنا</div></div>
+    <div class="stat"><div class="num">12</div><div class="lbl">محافظة نخدمها</div></div>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-visual">🌱</div>
+    <div class="about-text">
+      <h2>من نحن</h2>
+      <p>شركة متخصصة في إنتاج وتوريد التقاوي المعتمدة وتطوير الأصناف المحلية، نجمع بين الخبرة المصرية الطويلة وأحدث أساليب تكنولوجيا الزراعة لنقدم للمزارع بداية قوية لكل موسم.</p>
+      <ul class="about-points">
+        <li>تقاوي معتمدة ومفحوصة قبل التوريد</li>
+        <li>أصناف مقاومة للأمراض ومناسبة للأراضي المصرية</li>
+        <li>دعم فني للمزارع طوال الموسم</li>
+        <li>التزام كامل بالجودة ومواعيد التسليم</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="products">
+  <div class="container">
+    <h2 class="section-title">منتجاتنا</h2>
+    <p class="section-sub">أصناف مختارة بعناية لتناسب طبيعة الأرض والمناخ، بإنتاجية عالية وجودة ثابتة.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="thumb t1">🌾</div>
+        <div class="body">
+          <h3>تقاوي القمح</h3>
+          <p>أصناف قمح عالية الإنتاجية ومقاومة للصدأ، مناسبة لمختلف الأراضي.</p>
+          <a href="#contact" class="more">اطلب التفاصيل ←</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb t2">🌽</div>
+        <div class="body">
+          <h3>تقاوي الذرة</h3>
+          <p>هجن ذرة شامية ورفيعة بإنتاجية ممتازة وثبات عالٍ في الأداء.</p>
+          <a href="#contact" class="more">اطلب التفاصيل ←</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb t3">🥬</div>
+        <div class="body">
+          <h3>تقاوي الخضروات</h3>
+          <p>تشكيلة واسعة من تقاوي الخضروات المختارة للمزارع التجارية والمنزلية.</p>
+          <a href="#contact" class="more">اطلب التفاصيل ←</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section id="why">
+  <div class="container">
+    <h2 class="section-title">لماذا يختارنا المزارعون</h2>
+    <p class="section-sub">لأن نجاح الموسم يبدأ من التقاوي، نهتم بكل تفصيلة من الاختيار حتى التسليم.</p>
+    <div class="features">
+      <div class="feature"><div class="ico">🧪</div><h3>فحص واعتماد</h3><p>كل دفعة تقاوي تمر بفحوصات إنبات ونقاوة قبل وصولها لك.</p></div>
+      <div class="feature"><div class="ico">🚜</div><h3>خبرة ميدانية</h3><p>فريق يعرف الأرض والمناخ ويقدّم توصيات عملية لكل محصول.</p></div>
+      <div class="feature"><div class="ico">🤝</div><h3>دعم مستمر</h3><p>مع المزارع من يوم الزراعة حتى الحصاد، وليس عند البيع فقط.</p></div>
+      <div class="feature"><div class="ico">📦</div><h3>توريد سريع</h3><p>شبكة توزيع تغطي المحافظات وتلتزم بمواعيد الموسم.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CEO -->
+<section class="ceo">
+  <div class="container">
+    <blockquote>"هدفنا من الأول إن المزارع المصري يحصل على تقاوي يثق فيها، لأن ثقته هي رأس مالنا الحقيقي."</blockquote>
+    <div class="who">اسم المدير التنفيذي</div>
+    <div class="role">المؤسس والرئيس التنفيذي</div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">تواصل معنا</h2>
+    <p class="section-sub">جاهزون للرد على استفساراتك وتوريد طلبك في أسرع وقت.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="row"><div class="ico">📍</div><div><h4>العنوان</h4><p>المنطقة الصناعية، مدينة السادات، محافظة المنوفية</p></div></div>
+        <div class="row"><div class="ico">📞</div><div><h4>التليفون</h4><p dir="ltr">+20 100 000 0000</p></div></div>
+        <div class="row"><div class="ico">✉️</div><div><h4>البريد الإلكتروني</h4><p>info@example.com</p></div></div>
+        <div class="row"><div class="ico">🕒</div><div><h4>مواعيد العمل</h4><p>السبت - الخميس: 9 صباحًا - 5 مساءً</p></div></div>
+        <a class="wa-btn" href="https://wa.me/201000000000" target="_blank" rel="noopener">💬 تواصل واتساب</a>
+      </div>
+      <form onsubmit="event.preventDefault();alert('شكرًا لتواصلك! سنرد عليك في أقرب وقت.');">
+        <label>الاسم</label>
+        <input type="text" placeholder="اكتب اسمك" required>
+        <label>رقم الموبايل</label>
+        <input type="tel" placeholder="01xxxxxxxxx" required>
+        <label>رسالتك</label>
+        <textarea placeholder="اكتب استفسارك أو طلبك" required></textarea>
+        <button type="submit" class="btn btn-gold" style="width:100%">إرسال الرسالة</button>
+        <p class="form-note">* النموذج تجريبي حاليًا، ويُربط لاحقًا بخدمة إرسال مجانية أو ببريد الشركة.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h4>🌾 الحصاد للتقاوي</h4>
+      <p>شركة متخصصة في التقاوي المعتمدة وتكنولوجيا التنمية الزراعية، نخدم المزارع المصري منذ أكثر من 25 عامًا.</p>
+      <div class="socials">
+        <a href="#" aria-label="فيسبوك">📘</a>
+        <a href="#" aria-label="انستجرام">📸</a>
+        <a href="#" aria-label="واتساب">💬</a>
+        <a href="#" aria-label="يوتيوب">▶️</a>
+      </div>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <ul class="footer-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">عن الشركة</a></li>
+        <li><a href="#products">منتجاتنا</a></li>
+        <li><a href="#why">لماذا نحن</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>تواصل</h4>
+      <p>📍 مدينة السادات، المنوفية</p>
+      <p dir="ltr">📞 +20 100 000 0000</p>
+      <p>✉️ info@example.com</p>
+    </div>
+  </div>
+  <div class="copy">جميع الحقوق محفوظة © 2026 شركة الحصاد للتقاوي والتنمية الزراعية</div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="واتساب">💬</a>
+
+<script>
+var burger=document.getElementById('burger');
+var navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',function(){navLinks.classList.toggle('open');});
+navLinks.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(){navLinks.classList.remove('open');});
+});
+</script>
+</body>
+</html>
